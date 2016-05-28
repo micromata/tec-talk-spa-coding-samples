@@ -14,9 +14,18 @@ const createRouter = () => {
 		const url = location.hash.slice(1);
 		const routeHandler = routes[url];
 
-		if (routeHandler) {
-			routeHandler();
+		if (!routeHandler) {
+			const otherwiseRoute = routes['*'];
+
+			if (!otherwiseRoute) {
+				throw new Error('No otherwise route was added');
+			}
+
+			otherwiseRoute();
+			return;
 		}
+
+		routeHandler();
 	};
 
 	if (window) {

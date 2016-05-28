@@ -8,3 +8,7 @@ router.addRoute('home', () => {
 router.addRoute('about', () => {
 	console.log('i am the about route');
 });
+
+router.addRoute('*', () => {
+	console.log('I am the otherwise route');
+});
