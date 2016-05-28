@@ -4,18 +4,18 @@ import AboutRoute from './about';
 
 const router = createRouter('app');
 
-router.addRoute('', () => {
+router.addRoute('', {init: () => {
 	router.navigateToHashUrl('home');
-});
+}});
 
-router.addRoute('/', () => {
+router.addRoute('/', {init: () => {
 	router.navigateToHashUrl('home');
-});
+}});
 
-router.addRoute('home', HomeRoute.init);
+router.addRoute('home', {init: HomeRoute.init, dispose: HomeRoute.dispose});
 
-router.addRoute('about', AboutRoute.init);
+router.addRoute('about', {init: AboutRoute.init, dispose: AboutRoute.dispose});
 
-router.addRoute('*', () => {
+router.addRoute('*', {init: () => {
 	console.log('I am the otherwise route');
-});
+}});

@@ -1,6 +1,7 @@
 const createRouter = domEntryPointSelector => {
 	const routes = {};
 	const domEntryPoint = document.getElementById(domEntryPointSelector);
+	let currentRouteUrl;
 
 	const addRoute = (routeUrl, routeHandler) => {
 		routes[routeUrl] = routeHandler;
@@ -26,7 +27,15 @@ const createRouter = domEntryPointSelector => {
 			return;
 		}
 
-		routeHandler(domEntryPoint);
+		if (currentRouteUrl) {
+			if (routes[currentRouteUrl].dispose) {
+				routes[currentRouteUrl].dispose();
+			}
+		}
+
+		routeHandler.init(domEntryPoint);
+
+		currentRouteUrl = url;
 	};
 
 	if (window) {
