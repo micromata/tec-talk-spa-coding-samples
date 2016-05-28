@@ -5,8 +5,8 @@ const createRouter = () => {
 		routes[routeUrl] = routeHandler;
 	};
 
-	const navigateToHashUrl = () => {
-
+	const navigateToHashUrl = hashUrl => {
+		location.hash = hashUrl;
 	};
 
 	const handleRouting = () => {
