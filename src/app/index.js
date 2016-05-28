@@ -1,4 +1,7 @@
 import createRouter from './core/router.js';
+import HomeRoute from './home';
+import AboutRoute from './about';
+
 const router = createRouter();
 
 router.addRoute('', () => {
@@ -9,13 +12,9 @@ router.addRoute('/', () => {
 	router.navigateToHashUrl('home');
 });
 
-router.addRoute('home', () => {
-	console.log('i am the home route');
-});
+router.addRoute('home', HomeRoute.init);
 
-router.addRoute('about', () => {
-	console.log('i am the about route');
-});
+router.addRoute('about', AboutRoute.init);
 
 router.addRoute('*', () => {
 	console.log('I am the otherwise route');
