@@ -30,7 +30,18 @@ const applyDataBinding = viewModel => {
 
 	};
 
+	const applyBindingFromDomToModel = () => {
+		$(document).off('input.applyDatabinding');
+		$(document).on('input.applyDatabinding', evt => {
+			const attr = $(evt.target).attr('data-bind');
+			if (typeof (viewModel[attr]) !== 'undefined') {
+				viewModel[attr].set(evt.target.value);
+			}
+		});
+	};
+
 	applyBindingFromModelToDom();
+	applyBindingFromDomToModel();
 };
 
 export default applyDataBinding;
