@@ -479,7 +479,7 @@ module.exports = function (grunt) {
 				livereload: true
 			},
 			scripts: {
-				files: ['src/app/**/*.js', 'src/app/**/*.html'],
+				files: ['src/*.html', 'src/app/**/*.js', 'src/app/**/*.html'],
 				tasks: ['newer:eslint:fix', 'newer:copy:server', 'newer:browserify:clientDevelopment'],
 				options: {
 					spawn: false

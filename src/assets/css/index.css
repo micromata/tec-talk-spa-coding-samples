@@ -6699,9 +6699,25 @@ html {
 }
 body {
   overflow-y: scroll;
-  padding-top: 70px;
-  padding-bottom: 30px;
   margin-bottom: 40px;
+}
+nav {
+  position: fixed;
+  background-color: #ecf0f1;
+  width: 100%;
+}
+nav ul,
+nav li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  padding: 20px;
+}
+#app {
+  padding-top: 70px;
 }
 .alert {
   border-radius: 4px;
