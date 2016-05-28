@@ -1,5 +1,6 @@
 import {render} from '../core/rendering.js';
 import ViewModel from './viewmodel';
+import applyDataBinding from './_pattern/applyDatabinding';
 
 const init = $el => {
 	const viewModel = new ViewModel();
@@ -8,6 +9,7 @@ const init = $el => {
 		.then(response => response.text())
 		.then(template => {
 			render(template, viewModel, $el);
+			applyDataBinding(viewModel);
 		});
 };
 
