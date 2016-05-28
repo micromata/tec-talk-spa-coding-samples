@@ -1,5 +1,6 @@
-const createRouter = () => {
+const createRouter = domEntryPointSelector => {
 	const routes = {};
+	const domEntryPoint = document.getElementById(domEntryPointSelector);
 
 	const addRoute = (routeUrl, routeHandler) => {
 		routes[routeUrl] = routeHandler;
@@ -25,7 +26,7 @@ const createRouter = () => {
 			return;
 		}
 
-		routeHandler();
+		routeHandler(domEntryPoint);
 	};
 
 	if (window) {

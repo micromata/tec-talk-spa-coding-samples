@@ -2,7 +2,7 @@ import createRouter from './core/router.js';
 import HomeRoute from './home';
 import AboutRoute from './about';
 
-const router = createRouter();
+const router = createRouter('app');
 
 router.addRoute('', () => {
 	router.navigateToHashUrl('home');

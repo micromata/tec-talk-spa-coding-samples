@@ -6718,6 +6718,8 @@ nav li {
 }
 #app {
   padding-top: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .alert {
   border-radius: 4px;

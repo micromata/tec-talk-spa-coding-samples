@@ -1,5 +1,5 @@
-const init = () => {
-	console.log('I am the home route');
+const init = $el => {
+	$el.textContent = 'I am the home route';
 };
 
 export default {init};
