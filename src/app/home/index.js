@@ -1,5 +1,11 @@
+import {render} from '../core/rendering.js';
+
 const init = $el => {
-	$el.textContent = 'I am the home route';
+	fetch('app/home/template.html')
+		.then(response => response.text())
+		.then(template => {
+			render(template, null, $el);
+		});
 };
 
 const dispose = () => {
