@@ -18,7 +18,7 @@ const init = $el => {
 
 	store.dispatch({
 		type: 'ADD_TODO',
-		text: 'Mett holen'
+		text: 'Buy some mate'
 	});
 
 	console.log(store.getState());
