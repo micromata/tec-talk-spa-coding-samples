@@ -358,11 +358,11 @@ module.exports = function (grunt) {
 			dev: {
 				bsFiles: {
 					src: [
-						'<%= config.server %>/src/assets/css/*.css',
-						'<%= config.server %>/src/assets/img/**/*.jpg',
-						'<%= config.server %>/src/assets/img/**/*.png',
-						'<%= config.server %>/src/assets/img/**/*.gif',
-						'<%= config.server %>/src/app/**/*.js',
+						'<%= config.server %>/assets/css/*.css',
+						'<%= config.server %>/assets/img/**/*.jpg',
+						'<%= config.server %>/assets/img/**/*.png',
+						'<%= config.server %>/assets/img/**/*.gif',
+						'<%= config.server %>/app/**/*.js',
 						'<%= config.server %>/*.html'
 					]
 				},
